@@ -414,6 +414,60 @@ export const categories = [
   { name: "Real-World Assets", slug: "real-world-assets" }
 ]
 
+export const mockArticles = {
+  bitcoin: [
+    {
+      id: 1,
+      title: "Bitcoin Surges Past $100K: What's Driving the Rally?",
+      excerpt: "Bitcoin has reached a new all-time high as institutional demand and ETF inflows continue to accelerate.",
+      content: "Bitcoin's historic rise past $100,000 marks a major milestone for the cryptocurrency market. Institutional investors, spurred by the approval of spot Bitcoin ETFs, have been pouring capital into BTC at an unprecedented rate. Analysts point to macroeconomic uncertainty and a weakening dollar as additional tailwinds. With the next halving event approaching, supply dynamics are also tightening, adding further upward pressure on price.",
+      author: "Alex Morgan",
+      publishedAt: "2026-03-20T10:00:00Z",
+      category: "bitcoin",
+      image: "/api/placeholder/800/400"
+    },
+    {
+      id: 2,
+      title: "Bitcoin ETF Inflows Break Weekly Records",
+      excerpt: "Spot Bitcoin ETFs have seen record-breaking weekly inflows, signaling strong institutional appetite.",
+      content: "The newly approved spot Bitcoin ETFs have attracted billions of dollars in their first weeks of trading. Asset managers including major Wall Street firms have all reported significant inflows, with retail and institutional investors alike embracing the new investment vehicle. This demand has contributed to Bitcoin's price appreciation and reduced available supply on exchanges.",
+      author: "Jamie Lee",
+      publishedAt: "2026-03-15T08:30:00Z",
+      category: "bitcoin",
+      image: "/api/placeholder/800/400"
+    }
+  ],
+  ethereum: [
+    {
+      id: 3,
+      title: "Ethereum's Next Upgrade: What to Expect",
+      excerpt: "The Ethereum community is gearing up for its next major protocol upgrade, bringing new features and efficiency improvements.",
+      content: "Ethereum developers have announced the details of the next network upgrade, which promises to reduce gas fees, improve throughput, and enhance developer tooling. Stakers and DeFi users are watching closely as the upgrade could significantly impact yields and protocol economics. Community testing on testnets has gone smoothly, with a mainnet launch expected in the coming months.",
+      author: "Sam Rivera",
+      publishedAt: "2026-03-18T12:00:00Z",
+      category: "ethereum",
+      image: "/api/placeholder/800/400"
+    }
+  ],
+  defi: [
+    {
+      id: 4,
+      title: "DeFi Total Value Locked Hits New Highs",
+      excerpt: "Decentralized finance protocols are experiencing a renaissance as TVL climbs to record levels.",
+      content: "The total value locked across DeFi protocols has surpassed previous records, driven by new lending platforms, liquid staking derivatives, and cross-chain bridges. Yield opportunities have attracted both retail and institutional capital, with some protocols offering double-digit APYs on stablecoin deposits. Analysts caution that high yields come with smart contract and liquidation risks.",
+      author: "Dana Kim",
+      publishedAt: "2026-03-10T09:00:00Z",
+      category: "defi",
+      image: "/api/placeholder/800/400"
+    }
+  ]
+}
+
+export function getArticleById(id) {
+  const allArticles = Object.values(mockArticles).flat()
+  return allArticles.find(a => a.id === id) || null
+}
+
 // Helper function to format large numbers
 export function formatNumber(num) {
   if (num >= 1000000000000) {
